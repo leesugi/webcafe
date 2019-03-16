@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("fontello.css");
 /* 스타일 초기화 */
 *, *::before, *::after{
   box-sizing: border-box;
@@ -63,7 +64,7 @@ body{
 /* 로고 */
 .logo{
    position: absolute;
-  top: 45px;
+  top: 50px;
   left: 65px;
 }
 /* 안내링크 */
@@ -92,9 +93,12 @@ body{
   background:#e2572d linear-gradient(to bottom, #ea892e 0%,#e2572d 30%,#e2572d 70%,#ea892e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   margin-top: 10px;
   padding-left: 225px;
+  border-top:2px solid #000;
+  border-radius:0 0 5px 5px;
 }
 .menu > li{
   float: left;
+  position: relative;
 }
 .menu-item-text{
   font-size: 1.7rem;
@@ -103,16 +107,77 @@ body{
   padding: 1em 18px;
   display: block;
   border-left: 1px solid #fff;
+  text-shadow:1px 0 0 #000, 0 1px 0 #000,-1px 0 0 #000, 0 -1px 0 #000;
 }
+
+.menu-act .menu-item-text{
+  color:#ff0;
+  position: relative;
+}
+
+.menu-act .menu-item-text::after{
+ position: absolute;
+ width:calc(100% - 36px);
+ bottom:-2px;
+ content:"";
+ display:block;
+ border-top:2px solid #000;
+}/*span의 마지막 자식요소를 만든다.*/
+
+
 .sub-menu{
-  background: rgb(88, 88, 83);
+  /*background:pink;*/
   position: absolute;
+  white-space:nowrap;
   display: none;
+  top:55px;
+}
+
+.menu-act .sub-menu{
+  display:block;
+}
+
+.sub-menu1, .sub-menu2, .sub-menu3{
+  left:0;
+}
+.sub-menu4, .sub-menu5, .sub-menu4{
+  right:0;
+}
+
+
+.sub-menu li, .sub-menu a{
+  display:inline-block;
+}
+
+.sub-menu a{
+  padding:10px 0;
+  margin-right: 10px;
 }
 
 /* 비주얼 */
 .visual{
   height: 120px;
+}
+@keyframes textAni{
+  0%{
+    font-size:12px;
+    color:rgba(0,0,0,0);/*투명도 효과*/
+    transform: translate(0,0)
+  }
+  100%{
+    font-size:24px;
+    color:rgba(0,0,0,1);/*투명도 효과*/
+    transform: translate(400px, 75px);
+  }
+}
+.visual-text{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation-name:textAni;
+  animation-duration: 5s;
+  animation-fill-mode:forwards;
+  /*글자크기변화*/
+  background: yellow;
+  width:545px;/*넓이를 임의로 정해줌*/
 }
 /* 메인 콘텐츠 */
 .main{
