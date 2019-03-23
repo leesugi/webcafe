@@ -439,3 +439,56 @@ margin-top:10px;
   right:-8px;
   padding:8px;/*클릭하는 면적 넓게하기 위해서*/
 }
+/*새소식*/
+.news{
+  position:relative;
+  margin-top:20px;
+}
+.news::before{
+  content:"";
+  position: absolute;
+  top:35px;
+  left:0;
+  width:80%;
+  height:1px;
+  background: #aaa linear-gradient(to right, #aaa, #fff);
+}
+.news-heading{
+  font-size:1.5rem;
+  color:#ed552f;
+}
+.news-link{
+  display:block;
+  margin-top:35px;
+}
+.news-item{
+  position:relative;
+  padding-left:130px;
+}
+.news-item h3{
+  font-size:1.4rem;
+}
+.news-item time{
+  display:block;
+  margin-top:5px;
+}
+.news-item p{
+  margin-top:10px;
+  line-height: 1.5;
+}
+.news-item-thumbnail{
+  position: absolute;
+  top:3px;/*이미지와 타이트를 같은선상에 보일수 있게 숫자값을 넣음*/
+  left:0;
+  text-align: center;
+}
+.news-item-thumbnail img{
+  box-shadow: 0 15px 15px 0 #ccc;
+  margin-bottom: 15px;
+}
+.news-more{
+  position: absolute;
+  top:-8px;
+  right:-8px;
+  padding:8px;
+}
